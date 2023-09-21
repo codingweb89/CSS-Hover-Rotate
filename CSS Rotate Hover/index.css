@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background: #28282B; */
+    /* background: #353935; */
+    background: #000080;
+    font-family: 'Trade Gothic Bold',sans-serif;
+    color: #fff;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.parent {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 5px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, .2);
+    backdrop-filter: blur(5px);
+    transition: 1s;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.parent img {
+    filter: invert(100%);
+    width: 40%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.parent:hover {
+    background: rgba(255, 255, 255, .5);
+}
+
+.parent:nth-child(1) {
+    left: 70px;
+    transform: rotate(-15deg);
+}
+
+.parent:nth-child(2) {
+    transform: rotate(10deg);
+}
+
+.parent:nth-child(3) {
+    top: 20px;
+    left: -70px;
+    transform: rotate(20deg);
+}
+
+.parent:nth-child(4) {
+    top: 20px;
+    left: -140px;
+    transform: rotate(-15deg);
+}
+
+.container:hover .parent:nth-child(1) {
+    left: 0;
+    transform: rotate(0);
+}
+
+.container:hover .parent:nth-child(2) {
+    transform: rotate(0);
+}
+
+.container:hover .parent:nth-child(3) {
+    top: 0;
+    left: 0;
+    transform: rotate(0);
+}
+
+.container:hover .parent:nth-child(4) {
+    top: 0;
+    left: 0;
+    transform: rotate(0);
+}
+
+
+.name {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background: rgba(255, 255, 255, .5);
+    padding: 5px;
+}
+
+.parent:hover .name {
+    background: rgba(255, 255, 255, .9);
+    color: #000;
+}
